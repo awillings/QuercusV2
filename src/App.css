@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100vw;
+}
+
+.group {
+  background-color: rgb(208, 231, 164);
+  margin: .5rem;
+  width: 10rem;
+  height: 17.5rem;
+  text-align: center;
+  text-transform: capitalize;
+  font-family: sans-serif;
+  padding: 1rem;
+}
+
+.group:nth-child(3n) {
+  background-image: radial-gradient(circle at bottom left, rgb(255, 255, 255), rgba(0, 0, 0, 0.0));
+}
+
+.group:nth-child(3n + 1) {
+  background-image: radial-gradient(circle at bottom right, rgb(255, 255, 255), rgba(0, 0, 0, 0.0));
+}
+
+.group:nth-child(3n + 2) {
+  background-image: radial-gradient(circle at bottom left, rgb(255, 255, 255), rgba(0, 0, 0, 0.0));
+}
+
+
+.group img {
+  width: 100%;
+  height: 10rem;
+}
+
+.group p {
+  padding: .25rem;
+}
+
+.containerTwo {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#map {
+  height: 40rem;
+  width: 70rem;
+}
