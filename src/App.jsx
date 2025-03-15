@@ -8,7 +8,7 @@ import { MapContainer, TileLayer, useMap, Marker, Popup } from 'react-leaflet'
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 
 function retrieveData (id) {
-  const { data, error, isLoading } = useSWR(`https://api.inaturalist.org/v1/taxa?taxon_id=${id}`, fetcher)
+  const { data, error, isLoading } = useSWR(`https://api.inaturalist.org/v1/taxa/${id}`, fetcher)
  
   return {
     data: data,
@@ -61,6 +61,7 @@ function Parent ({ taxaId, setKey }) {
       <p>{parentData.preferred_common_name}</p>
       <p>({parentData.name})</p>
       <p style={{fontSize:"75%"}}>{parentData.id}</p>
+      <p dangerouslySetInnerHTML={{__html: parentData.wikipedia_summary}}></p>
     </div>
   )
 }
