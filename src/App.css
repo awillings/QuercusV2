@@ -3,56 +3,33 @@
   padding: 0;
 }
 
-.container {
+nav {
+  height: 5vh;
+  width: 100vw;
+  background-color: white;
+  box-shadow: 1px 1px 5px gray;
+}
+
+#image {
   display: inline-flex;
-  align-content: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  width: 100vw;
+  height: 20rem;
+  width: 25rem;
 }
 
-.group {
-  background-color: rgb(208, 231, 164);
-  margin: .5rem;
-  width: 10rem;
-  height: 17.5rem;
-  text-align: center;
-  text-transform: capitalize;
-  font-family: sans-serif;
-  padding: 1rem;
+#main-image {
+  height: 20rem;
+  width: 20rem;
 }
 
-.group:nth-child(3n) {
-  background-image: radial-gradient(circle at bottom left, rgb(255, 255, 255), rgba(0, 0, 0, 0.0));
-}
-
-.group:nth-child(3n + 1) {
-  background-image: radial-gradient(circle at bottom right, rgb(255, 255, 255), rgba(0, 0, 0, 0.0));
-}
-
-.group:nth-child(3n + 2) {
-  background-image: radial-gradient(circle at bottom left, rgb(255, 255, 255), rgba(0, 0, 0, 0.0));
-}
-
-
-.group img {
-  width: 100%;
-  height: 10rem;
-}
-
-.group p {
-  padding: .25rem;
-}
-
-.containerTwo {
-  width: 100vw;
-  height: 60vh;
+#image-carousel {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  width: 5rem;
+  height: 20rem;
+  overflow: scroll;
 }
 
-#map {
-  height: 40rem;
-  width: 70rem;
+.sub-image {
+  height: 5rem;
+  width: 5rem;
 }
