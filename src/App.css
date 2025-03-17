@@ -3,33 +3,130 @@
   padding: 0;
 }
 
+:root {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: whitesmoke;
+}
+
 nav {
-  height: 5vh;
+  height: 3rem;
   width: 100vw;
   background-color: white;
-  box-shadow: 1px 1px 5px gray;
+  z-index: 3;
+}
+
+#information-grid {
+  margin-top: 1rem;
+  width: min(80vw, 60rem);
+  height: min(60vh, 45rem);
+  padding: 2rem;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "image info"
+    "image map";
+  gap: 1rem 1rem;
+}
+
+#information-grid button {
+  background-color: lightgreen;
+  padding: 0.5rem 0rem;
+  margin-bottom: -1rem;
+  border: none;
 }
 
 #image {
   display: inline-flex;
-  height: 20rem;
-  width: 25rem;
+  height: 100%;
+  width: 100%;
+  grid-area: image;
 }
 
 #main-image {
-  height: 20rem;
-  width: 20rem;
+  height: 100%;
+  width: 100%;
 }
 
 #image-carousel {
   display: flex;
   flex-direction: column;
-  width: 5rem;
-  height: 20rem;
+  align-items: center;
+  width: 20%;
+  height: 100%;
   overflow: scroll;
 }
 
 .sub-image {
-  height: 5rem;
-  width: 5rem;
+  width: 90%;
+  aspect-ratio: 1;
+  margin-bottom: .15rem;
+}
+
+#page-body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 0;
+}
+
+#map-container {
+  width: 100%;
+  height: 100%;
+  grid-area: map;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+#information {
+  width: 100%;
+  height: 100%;
+  grid-area: info;
+  overflow: scroll;
+}
+
+#wikipedia_summary {
+  font-size: 16px;
+}
+
+#children-container {
+  margin-top: .25rem;
+  width: 80vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.child {
+  background-color: rgb(249, 249, 249);
+  border: 8px solid white;
+  width: 7.5rem;
+  height: 12rem;
+  margin: 0.25rem;
+  text-align: center;
+  text-transform: capitalize;
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  font-size: 50%;
+}
+
+.child img {
+  width: 100%;
+  height: 7.5rem;
+  background-color: white;
+}
+
+.child-info {
+  margin-top: 1rem;
 }
