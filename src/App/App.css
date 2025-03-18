@@ -1,25 +1,47 @@
 * {
   margin: 0;
   padding: 0;
+  /* border: 1px solid black; */
 }
 
 :root {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: Lato,"Trebuchet MS",Arial,sans-serif;
   background-color: whitesmoke;
 }
 
 nav {
+  position: fixed;
   height: 3rem;
   width: 100vw;
-  background-color: white;
   z-index: 3;
+  align-content: center;
+  box-sizing: border-box;
+}
+
+#logo {
+  padding-left: 1rem;
+}
+
+#title-block {
+  margin-top: 3rem;
+  width: min(80vw, 60rem);
+  padding: 0rem 2rem;
+  height: 5rem;
+  background-color: white;
+  align-content: center;
+  text-transform: capitalize;
+}
+
+#subtitle {
+  color: #aaa;
+  font-size: 20px;
 }
 
 #information-grid {
-  margin-top: 1rem;
   width: min(80vw, 60rem);
   height: min(60vh, 45rem);
-  padding: 2rem;
+  padding: 0rem 2rem;
+  padding-bottom: 2rem;
   background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -31,10 +53,13 @@ nav {
 }
 
 #information-grid button {
-  background-color: lightgreen;
+  background: radial-gradient(circle at top left, rgb(89, 180, 89), rgb(95, 210, 124));
   padding: 0.5rem 0rem;
   margin-bottom: -1rem;
   border: none;
+  color: white;
+  font-weight: bolder;
+  letter-spacing: 2px;
 }
 
 #image {
@@ -89,6 +114,12 @@ nav {
   height: 100%;
   grid-area: info;
   overflow: scroll;
+  box-sizing: border-box;
+  padding: .5rem;
+  background: radial-gradient(circle at top left, rgb(73, 155, 73), rgb(108, 233, 139));
+  background-attachment: local;
+  color: white;
+  border-radius: .5rem .5rem 0rem 0rem;
 }
 
 #wikipedia_summary {
@@ -102,31 +133,41 @@ nav {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 10vh;
 }
 
 .child {
-  background-color: rgb(249, 249, 249);
-  border: 8px solid white;
-  width: 7.5rem;
-  height: 12rem;
-  margin: 0.25rem;
-  text-align: center;
+  background-color: white;
+  color: black;
+  width: 12rem;
+  height: 16rem;
+  margin: 0.5rem;
   text-transform: capitalize;
   align-content: center;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  text-align: center;
+  justify-content: space-between;
   font-size: 50%;
+  border-radius: .5rem .5rem 0rem 0rem;
 }
 
 .child img {
-  width: 100%;
-  height: 7.5rem;
+  width: 12rem;
+  height: 12rem;
   background-color: white;
+  border-radius: .5rem .5rem 0rem 0rem;;
 }
 
 .child-info {
-  margin-top: 1rem;
+  box-sizing: border-box;
+  padding: 0.4rem;
+  height: 4rem;
+  width: 11.5rem;
+  display: flex;
+  flex-direction: column;
+  line-height: 1rem;
+}
+
+.child-info h3 {
+  color: #aaa;
 }

@@ -1,10 +1,10 @@
 import './App.css'
 import useSWR from 'swr'
 import {useEffect, useState } from 'react'
-import Image from './Image.jsx'
-import Map from './Map.jsx'
-import Information from './Information.jsx'
-import ChildrenList from './ChildrenList.jsx'
+import Image from '../Image/Image.jsx'
+import Map from '../Map/Map.jsx'
+import Information from '../Information/Information.jsx'
+import ChildrenList from '../ChildrenList/ChildrenList.jsx'
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 let callsMadeToApi = 0
@@ -28,14 +28,22 @@ function App() {
 
 	return (
 		<div>
-			<nav></nav>
+			<nav>
+				<h1 id="logo">Quercus</h1>
+			</nav>
 			<div id="page-body">
-				<div id="information-grid">
-					<button onClick={() => setKey(data.results[0].parent_id !== null ? data.results[0].parent_id : 48460 )}>Return to Parent</button>
-					<button onClick={() => setKey(48460)}>Return to Life</button>
-					<Image taxaId={key} data={data} ></Image>
-					<Information data={data}></Information>
-					<Map taxaId={key} ></Map>   
+				<div id="information-panel">
+					<div id="title-block">
+						<h1 id="title">{data.results[0].preferred_common_name}</h1>
+						<h2 id="subtitle">({data.results[0].name})</h2>
+					</div>
+					<div id="information-grid">
+						<button onClick={() => setKey(data.results[0].parent_id !== null ? data.results[0].parent_id : 48460 )}>Return to Parent</button>
+						<button onClick={() => setKey(48460)}>Return to Life</button>
+						<Image taxaId={key} data={data} ></Image>
+						<Information data={data}></Information>
+						<Map taxaId={key} ></Map>   
+					</div>
 				</div>
 				<ChildrenList data={data} setKey={setKey}></ChildrenList>
 			</div>

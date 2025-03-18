@@ -5,7 +5,7 @@ function Child({data, index, setKey}) {
             <img src={data.default_photo !== null ? data.default_photo.medium_url : ""} alt="" />
             <div className="child-info">
                 <h2>{data.preferred_common_name}</h2>
-                <h3>{data.name}</h3>
+                <h3>({data.name})</h3>
             </div>
 
         </div>

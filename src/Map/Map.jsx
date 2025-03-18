@@ -14,7 +14,7 @@ export default function Map({taxaId}) {
                     />
                     <TileLayer
                         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                        url={`https://api.inaturalist.org/v1/grid/{z}/{x}/{y}.png?acc=true&captive=false&identified=true&verifiable=true&taxon_id=${taxaId}`}
+                        url={`https://api.inaturalist.org/v1/grid/{z}/{x}/{y}.png?color=lightgreen&acc=true&captive=false&identified=true&verifiable=true&taxon_id=${taxaId}`}
                     />
                 </MapContainer>
         </div>
