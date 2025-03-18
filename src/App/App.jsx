@@ -5,6 +5,7 @@ import Image from '../Image/Image.jsx'
 import Map from '../Map/Map.jsx'
 import Information from '../Information/Information.jsx'
 import ChildrenList from '../ChildrenList/ChildrenList.jsx'
+import Nameplate from '../Nameplate/Nameplate.jsx'
 
 const fetcher = (...args) => fetch(...args).then(res => res.json())
 let callsMadeToApi = 0
@@ -23,8 +24,8 @@ function retrieveTaxa (id) {
 function App() {
 	const [key, setKey] = useState(48460)
 	const {data, isLoading, isError } = retrieveTaxa(key)
-	if (isLoading) return <p>Loading...</p>
-	if (isError) return <p>Error!</p>
+	// if (isLoading) return <p>Loading...</p>
+	// if (isError) return <p>Error!</p>
 
 	return (
 		<div>
@@ -34,18 +35,17 @@ function App() {
 			<div id="page-body">
 				<div id="information-panel">
 					<div id="title-block">
-						<h1 id="title">{data.results[0].preferred_common_name}</h1>
-						<h2 id="subtitle">({data.results[0].name})</h2>
+						<Nameplate isLoading={isLoading} isError={isError} isMain={true} data={data} ></Nameplate>
 					</div>
 					<div id="information-grid">
 						<button onClick={() => setKey(data.results[0].parent_id !== null ? data.results[0].parent_id : 48460 )}>Return to Parent</button>
 						<button onClick={() => setKey(48460)}>Return to Life</button>
-						<Image taxaId={key} data={data} ></Image>
-						<Information data={data}></Information>
-						<Map taxaId={key} ></Map>   
+						<Image isLoading={isLoading} isError={isError} taxaId={key} data={data} ></Image>
+						<Information isLoading={isLoading} isError={isError} data={data}></Information>
+						<Map isLoading={isLoading} isError={isError} taxaId={key} ></Map>   
 					</div>
 				</div>
-				<ChildrenList data={data} setKey={setKey}></ChildrenList>
+				<ChildrenList isLoading={isLoading} isError={isError} data={data} setKey={setKey}></ChildrenList>
 			</div>
 		</div>
 	)
